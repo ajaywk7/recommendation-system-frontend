@@ -121,7 +121,7 @@ class OrderConfirm extends Component {
     console.log(data);
 
     const options = {
-      key: "rzp_test_SZp0P0isnoUWrQ",
+      key: "rzp_test_SZp0P0isnoUWrQ", //your razorpay id
       currency: data.currency,
       amount: data.amount.toString() ?? "200",
       order_id: data.id,
