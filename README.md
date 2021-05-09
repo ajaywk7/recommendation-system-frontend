@@ -6,6 +6,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+###PRE REQUISITES
+1.Setup the recommendation-system-backend .
+2.Run the recommendation-system-backend and paste the url into src/config/urls in server.
+3.create a google client id for authentication and paste that also into src/config/urls.
+4.edit the razorpay key inside the options object in displayRazorpay function - src/pages/orderConfirm.js.  
+
 ### `npm start`
 
 Runs the app in the development mode.\
