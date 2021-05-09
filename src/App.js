@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Container } from "react-bootstrap";
+import NavBar from "./pages/common/NavBar";
+import MyProvider from "./context/myProvider";
+import Homepage from "./pages/hompage";
+import ProductList from "./pages/productList";
+import ViewProduct from "./pages/viewProduct";
+import Cart from "./pages/cart";
+import Login from "./pages/login";
+import OrderConfirm from "./pages/orderConfirm";
+import MyOrders from "./pages/myOrders";
+import TrackOrder from "./pages/trackOrder";
+import Dashboard from "./pages/dashboard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MyProvider>
+      <Container className="p-0" fluid>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route exact path="/">
+              <Homepage />
+            </Route>
+            <Route
+              exact
+              path="/category/:category"
+              component={ProductList}
+              key={2}
+            />
+            <Route exact path="/search" component={ProductList} key={1} />
+            <Route exact path="/wishlist" component={ProductList} key={3} />
+            <Route exact path="/view_product" component={ViewProduct} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/order_confirm" component={OrderConfirm} />
+            <Route exact path="/my_orders" component={MyOrders} />
+            <Route exact path="/track_order" component={TrackOrder} />
+            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/dashboard" component={Dashboard} />
+          </Switch>
+        </Router>
+      </Container>
+    </MyProvider>
   );
 }
 
