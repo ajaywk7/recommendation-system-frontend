@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-###PRE REQUISITES
+### PRE REQUISITES
 1.Setup the recommendation-system-backend .
 2.Run the recommendation-system-backend and paste the url into src/config/urls in server.
 3.create a google client id for authentication and paste that also into src/config/urls.
